@@ -31,16 +31,27 @@ class DonateForm extends React.Component {
             ref={this.RaisedRef}
             type="number"
             step=".01"
+            min="0"
             required
+            disabled={this.props.targetReached ? 'disabled' : ''}
           />
+          <button
+            className="m-form__submit"
+            disabled={this.props.targetReached ? 'disabled' : ''}
+            type="submit"
+          >
+            Donate
+          </button>
         </div>
-        <button
-          className="m-form__submit"
-          disabled={this.props.targetReached ? 'disabled' : ''}
-          type="submit"
+        <div
+          className={
+            this.props.targetReached
+              ? 'm-form__message'
+              : 'm-form__message m-form__message--hidden'
+          }
         >
-          Donate
-        </button>
+          <p>Hooray, target reached! Thank you for all your donations :)</p>
+        </div>
       </form>
     );
   }

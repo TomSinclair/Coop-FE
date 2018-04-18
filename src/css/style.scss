@@ -2,6 +2,10 @@
 @import 'colors';
 @import 'https://fonts.googleapis.com/css?family=Open+Sans';
 
+body {
+  padding: 25px;
+}
+
 .m-donate {
   background: $color__background;
   border: 1px solid $color__border;
@@ -14,7 +18,7 @@
 .m-donate__content {
   font-size: 20px;
   line-height: 1.4;
-  padding: 50px 50px 25px;
+  padding: 50px 50px 0;
 
   h1,
   h2 {
@@ -52,7 +56,14 @@
 .m-splitContent__col {
   flex-basis: 0;
   flex-grow: 1;
+  margin: 0 0 25px;
   max-width: 100%;
+
+  &:not(:last-of-type) {
+    p {
+      padding-right: 15px;
+    }
+  }
 }
 
 .m-donate__progressBar {
@@ -85,15 +96,12 @@
 }
 
 .m-donate__footerLink {
-  border-bottom: 1px solid $color__text;
   color: $color__text;
   display: inline-block;
-  text-decoration: none;
   transition: border-bottom 180ms ease-in-out, color 180ms ease-in-out;
 
   &:hover,
   &:focus {
-    border-bottom: 1px solid $color__cta;
     color: $color__cta;
   }
 }
@@ -113,7 +121,14 @@
 }
 
 .m-form__inputWrapper {
+  display: flex;
+  flex-wrap: wrap;
   position: relative;
+  width: 100%;
+
+  @media (min-width: 600px) {
+    flex-wrap: nowrap;
+  }
 
   &:before {
     content: '£';
@@ -126,26 +141,55 @@
 }
 
 .m-form__input {
-  display: flex;
+  border: 1px solid $color__border;
+  flex: 1 1 auto;
   font-family: 'Open Sans', sans-serif;
   font-size: 20px;
   height: 80px;
-  margin: 0 20px 0 0;
+  margin: 0 0 15px 0;
   padding: 0 15px 0 28px;
+  width: 100%;
+
+  &:disabled {
+    opacity: 0.5;
+  }
+
+  @media (min-width: 600px) {
+    margin: 0 15px 15px 0;
+  }
 }
 
 .m-form__submit {
+  appearance: none;
   background: $color__cta;
   border: none;
   border-radius: 4px;
   color: $color__text--opp;
+  flex: 1 1 auto;
   font-family: 'Open Sans', sans-serif;
   font-size: 20px;
+  height: 80px;
   padding: 0 15px;
-  appearance: none;
+  width: 100%;
 
-  &:hover,
-  &:focus {
-    cursor: pointer;
+  @media (min-width: 600px) {
+    flex: 1 1 190px;
+  }
+
+  &:not(:disabled) {
+    &:hover,
+    &:focus {
+      cursor: pointer;
+    }
+  }
+
+  &:disabled {
+    opacity: 0.5;
+  }
+}
+
+.m-form__message {
+  &--hidden {
+    display: none;
   }
 }
