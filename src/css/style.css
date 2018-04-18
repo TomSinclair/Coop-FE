@@ -1,0 +1,23 @@
+.m-donate {
+  background: #fafafa;
+  border: 1px solid #dcdcdc;
+  height: 645px;
+  padding: 50px;
+  width: 500px; }
+
+.m-donate__progressBar {
+  border: 1px solid #000000;
+  display: block;
+  height: 30px;
+  overflow: hidden;
+  width: 100%;
+  position: relative; }
+
+.m-donate__percentageComplete {
+  background: #909d31;
+  display: block;
+  height: 100%;
+  transition: width 250ms ease-in-out;
+  position: absolute;
+  left: 0;
+  top: 0; }
