@@ -19,19 +19,23 @@ class DonateForm extends React.Component {
 
   render() {
     return (
-      <form className="a-form" onSubmit={this.handleSubmit}>
-        <label htmlFor="Donate">Donate to this project</label>
-        <input
-          className="a-form__input"
-          name="Donate"
-          id="Donate"
-          ref={this.RaisedRef}
-          type="number"
-          step=".01"
-          required
-        />
+      <form className="m-form" onSubmit={this.handleSubmit}>
+        <label className="m-form__label" htmlFor="Donate">
+          Donate to this project
+        </label>
+        <div className="m-form__inputWrapper">
+          <input
+            className="m-form__input"
+            name="Donate"
+            id="Donate"
+            ref={this.RaisedRef}
+            type="number"
+            step=".01"
+            required
+          />
+        </div>
         <button
-          className="a-form__submit"
+          className="m-form__submit"
           disabled={this.props.targetReached ? 'disabled' : ''}
           type="submit"
         >

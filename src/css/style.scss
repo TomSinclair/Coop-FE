@@ -1,15 +1,65 @@
+@import 'reset';
+@import 'colors';
+@import 'https://fonts.googleapis.com/css?family=Open+Sans';
+
 .m-donate {
-  background: #fafafa;
-  border: 1px solid #dcdcdc;
-  height: 645px;
-  padding: 50px;
-  width: 500px;
+  background: $color__background;
+  border: 1px solid $color__border;
+  box-shadow: 2px 2px 8px $color__border;
+  font-family: 'Open Sans', sans-serif;
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+.m-donate__content {
+  font-size: 20px;
+  line-height: 1.4;
+  padding: 50px 50px 25px;
+
+  h1,
+  h2 {
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1.4;
+    margin: 0 0 20px 0;
+  }
+
+  h2 {
+    font-weight: 100;
+  }
+
+  dl {
+    letter-spacing: -4px;
+  }
+
+  dt,
+  dd {
+    letter-spacing: 0;
+  }
+
+  .oversized {
+    display: block;
+    font-size: 24px;
+    font-weight: bold;
+  }
+}
+
+.m-splitContent {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.m-splitContent__col {
+  flex-basis: 0;
+  flex-grow: 1;
+  max-width: 100%;
 }
 
 .m-donate__progressBar {
-  border: 1px solid #000000;
+  border: 1px solid $color__border;
   display: block;
   height: 30px;
+  margin: 0 0 40px 0;
   overflow: hidden;
   width: 100%;
 
@@ -17,7 +67,7 @@
 }
 
 .m-donate__percentageComplete {
-  background: #909d31;
+  background: $color__progress;
   display: block;
   height: 100%;
   transition: width 250ms ease-in-out;
@@ -25,4 +75,77 @@
   position: absolute;
   left: 0;
   top: 0;
+}
+
+.m-donate__footer {
+  border-top: 1px solid $color__border;
+  font-size: 20px;
+  line-height: 1.4;
+  padding: 35px 50px;
+}
+
+.m-donate__footerLink {
+  border-bottom: 1px solid $color__text;
+  color: $color__text;
+  display: inline-block;
+  text-decoration: none;
+  transition: border-bottom 180ms ease-in-out, color 180ms ease-in-out;
+
+  &:hover,
+  &:focus {
+    border-bottom: 1px solid $color__cta;
+    color: $color__cta;
+  }
+}
+
+.m-form {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 20px;
+  line-height: 1.4;
+  margin: 0 0 45px 0;
+  padding: 0 50px;
+}
+
+.m-form__label {
+  margin: 0 0 10px 0;
+  width: 100%;
+}
+
+.m-form__inputWrapper {
+  position: relative;
+
+  &:before {
+    content: '£';
+    display: inline-block;
+    font-size: 20px;
+    line-height: 82px;
+    position: absolute;
+    left: 15px;
+  }
+}
+
+.m-form__input {
+  display: flex;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+  height: 80px;
+  margin: 0 20px 0 0;
+  padding: 0 15px 0 28px;
+}
+
+.m-form__submit {
+  background: $color__cta;
+  border: none;
+  border-radius: 4px;
+  color: $color__text--opp;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+  padding: 0 15px;
+  appearance: none;
+
+  &:hover,
+  &:focus {
+    cursor: pointer;
+  }
 }

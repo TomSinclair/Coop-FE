@@ -4,7 +4,10 @@ import DonationDetails from './DonationDetails';
 
 class App extends React.Component {
   state = {
-    data: [],
+    data: {
+      raised: 0,
+      target: 0
+    },
     percentage: 0,
     targetReached: false
   };
@@ -52,7 +55,9 @@ class App extends React.Component {
           targetReached={this.state.targetReached}
         />
         <footer className="m-donate__footer">
-          <a href="/">Learn more about causes local to you</a>
+          <a className="m-donate__footerLink" href="/">
+            Learn more about causes local to you
+          </a>
         </footer>
       </section>
     );

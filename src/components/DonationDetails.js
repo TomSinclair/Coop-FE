@@ -16,22 +16,32 @@ class DonationDetails extends React.Component {
 
     return (
       <section className="m-donate__content">
-        <p>Help refugees rebuild their lives and communities in Manchester</p>
-        <p>Manchester Refugee Support Network (MRSN)</p>
+        <h1>Help refugees rebuild their lives and communities in Manchester</h1>
+        <h2>Manchester Refugee Support Network (MRSN)</h2>
         <span className="m-donate__progressBar">
           <span
             className="m-donate__percentageComplete"
             style={{ width: `${percent}%` }}
           />
         </span>
-        <p>
-          Raised so far<br />
-          {formatPrice(parseFloat(raised))}
-        </p>
-        <p>
-          Target<br />
-          {formatPrice(parseFloat(target))}
-        </p>
+        <div className="m-splitContent">
+          <div className="m-splitContent__col">
+            <p>
+              Raised so far
+              <span className="oversized">
+                {formatPrice(parseFloat(raised))}
+              </span>
+            </p>
+          </div>
+          <div className="m-splitContent__col">
+            <p>
+              Target
+              <span className="oversized">
+                {formatPrice(parseFloat(target))}
+              </span>
+            </p>
+          </div>
+        </div>
       </section>
     );
   }
