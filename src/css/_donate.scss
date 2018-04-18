@@ -1,0 +1,99 @@
+.m-donate {
+  background: $color__background;
+  border: 1px solid $color__border;
+  box-shadow: 2px 2px 8px $color__border;
+  font-family: 'Open Sans', sans-serif;
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+.m-donate__content {
+  font-size: 20px;
+  line-height: 1.4;
+  padding: 50px 50px 0;
+
+  h1,
+  h2 {
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1.4;
+    margin: 0 0 20px 0;
+  }
+
+  h2 {
+    font-weight: 100;
+  }
+
+  dl {
+    letter-spacing: -4px;
+  }
+
+  dt,
+  dd {
+    letter-spacing: 0;
+  }
+
+  .oversized {
+    display: block;
+    font-size: 24px;
+    font-weight: bold;
+  }
+}
+
+.m-splitContent {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.m-splitContent__col {
+  flex-basis: 0;
+  flex-grow: 1;
+  margin: 0 0 25px;
+  max-width: 100%;
+
+  &:not(:last-of-type) {
+    p {
+      padding-right: 15px;
+    }
+  }
+}
+
+.m-donate__progressBar {
+  border: 1px solid $color__border;
+  display: block;
+  height: 30px;
+  margin: 0 0 40px 0;
+  overflow: hidden;
+  width: 100%;
+
+  position: relative;
+}
+
+.m-donate__percentageComplete {
+  background: $color__progress;
+  display: block;
+  height: 100%;
+  transition: width 250ms ease-in-out;
+
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.m-donate__footer {
+  border-top: 1px solid $color__border;
+  font-size: 20px;
+  line-height: 1.4;
+  padding: 35px 50px;
+}
+
+.m-donate__footerLink {
+  color: $color__text;
+  display: inline-block;
+  transition: border-bottom 180ms ease-in-out, color 180ms ease-in-out;
+
+  &:hover,
+  &:focus {
+    color: $color__cta;
+  }
+}

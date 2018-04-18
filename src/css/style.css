@@ -124,9 +124,6 @@ table {
 @-ms-viewport {
   width: device-width; }
 
-body {
-  padding: 25px; }
-
 .m-donate {
   background: #fafafa;
   border: 1px solid #acacac;
@@ -265,3 +262,6 @@ body {
 
 .m-form__message--hidden {
   display: none; }
+
+body {
+  padding: 25px; }

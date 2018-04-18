@@ -1,0 +1,87 @@
+.m-form {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 20px;
+  line-height: 1.4;
+  margin: 0 0 45px 0;
+  padding: 0 50px;
+}
+
+.m-form__label {
+  margin: 0 0 10px 0;
+  width: 100%;
+}
+
+.m-form__inputWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  width: 100%;
+
+  @media (min-width: 600px) {
+    flex-wrap: nowrap;
+  }
+
+  &:before {
+    content: '£';
+    display: inline-block;
+    font-size: 20px;
+    line-height: 82px;
+    position: absolute;
+    left: 15px;
+  }
+}
+
+.m-form__input {
+  border: 1px solid $color__border;
+  flex: 1 1 auto;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+  height: 80px;
+  margin: 0 0 15px 0;
+  padding: 0 15px 0 28px;
+  width: 100%;
+
+  &:disabled {
+    opacity: 0.5;
+  }
+
+  @media (min-width: 600px) {
+    margin: 0 15px 15px 0;
+  }
+}
+
+.m-form__submit {
+  appearance: none;
+  background: $color__cta;
+  border: none;
+  border-radius: 4px;
+  color: $color__text--opp;
+  flex: 1 1 auto;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+  height: 80px;
+  padding: 0 15px;
+  width: 100%;
+
+  @media (min-width: 600px) {
+    flex: 1 1 190px;
+  }
+
+  &:not(:disabled) {
+    &:hover,
+    &:focus {
+      cursor: pointer;
+    }
+  }
+
+  &:disabled {
+    opacity: 0.5;
+  }
+}
+
+.m-form__message {
+  &--hidden {
+    display: none;
+  }
+}
